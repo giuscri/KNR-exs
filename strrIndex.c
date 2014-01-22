@@ -5,7 +5,7 @@ int strrIndex(char* s, char* t) {
     int i, j, from = -1;
 
     for (i = 0; s[i] != '\0'; i++) {
-
+    
         for (j = 0; t[j] != '\0'; j++) {
             if (s[i++] != t[j])
                 break;
@@ -13,9 +13,8 @@ int strrIndex(char* s, char* t) {
 	
 	i = i - j;
 	
-	if (t[j] == '\0') {
+	if (t[j] == '\0')
 	    from = i;
-	}
 
     }
 
@@ -24,7 +23,7 @@ int strrIndex(char* s, char* t) {
 
 /*
 
-Main function for testing ...
+// Main function, here for testing ...
 
 #include <stdio.h>
 
