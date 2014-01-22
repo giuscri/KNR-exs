@@ -1,5 +1,5 @@
 # Compiling file ...
-gcc main.c len.c strIndex.c markupLine.c getLine.c -o customGrep
+gcc main.c len.c strIndex.c strrIndex.c markupLine.c getLine.c -o customGrep
 
 # Launching an example ...
 ./customGrep id < inputFile
