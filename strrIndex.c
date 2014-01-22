@@ -34,4 +34,6 @@ int main() {
     printf("strrindex(\"%s\", \"%s\") returns %d\n",
               s, t, strrindex(s, t));
 }
+
+
 */
