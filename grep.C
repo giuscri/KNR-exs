@@ -7,9 +7,9 @@ int getLine(char*, int);
 int strIndex(char*, char*);
 void printWithMarkdown(char*, char*);
 int len(char*);
-char *markupLine(char*, char*);
+char* markupLine(char*, char*);
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
 
     if (argc < 2) {
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     
 }
 
-
+// len: return length of s
 int len(char* s) {
     int i;
     for (i = 0; s[i] != '\0'; i++)
@@ -43,8 +43,8 @@ int len(char* s) {
     return i;
 }
 
-char *markupLine(char* s, char* pattern) {
-    //char out[len(s) + 2];
+// markupLine: return s with pattern markupped
+char* markupLine(char* s, char* pattern) {
     char *out = (char*)malloc(len(s)+10);
     
     int from = strIndex(s, pattern);
@@ -60,7 +60,6 @@ char *markupLine(char* s, char* pattern) {
     
     int i, j;
     for (i = 0, j = 0; i < from; i++, j++)
-        //printf("%c", s[i]);
 	out[j] = s[i];
 	
     out[j++] = '*';
@@ -80,31 +79,6 @@ char *markupLine(char* s, char* pattern) {
     
     return out;
 }
-
-void printWithMarkdown(char* s, char *pattern) {
-    int from = strIndex(s, pattern);
-    
-    #ifdef DEBUG
-        printf("DEBUG, from: %d\n", from);
-    #endif
-    
-    if (from < 0)
-        return;
-    
-    int i;
-    for (i = 0; i < from; i++)
-        printf("%c", s[i]);
-	
-    printf("*%s*", pattern);
-    
-    i += len(pattern);
-    
-    for (; s[i] != '\0'; i++)
-        printf("%c", s[i]);
-	
-    printf("\n");
-}
-
 
 // getLine: get line into s, return length
 int getLine(char s[], int lim) {
